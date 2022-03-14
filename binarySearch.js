@@ -69,10 +69,17 @@ function findLastIndex(nums, target){
     while (left <= right) {
         let pivot = left + Math.trunc((right-left)/2);
         
+        /*
         if (nums[pivot] > target) {
             right = pivot - 1;
         } else {
             left = pivot + 1;
+        }
+        */
+        if (nums[pivot] <= target) {
+            left = pivot + 1;
+        } else {
+            right = pivot - 1;
         }
         
         if (nums[pivot] == target) {
